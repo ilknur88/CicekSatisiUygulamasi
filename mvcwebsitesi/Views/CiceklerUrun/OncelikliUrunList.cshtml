@@ -1,0 +1,20 @@
+﻿@model IEnumerable<mvcwebsitesi.Models.CiceklerUrun>
+
+    <div class="widget">
+        <h4>POPÜLER ÜRÜNLER</h4>
+        <div class="products-list">
+            @foreach (var item in Model)
+            {
+                <div class="media">
+                    <a class="media-left" href="#">
+                        <img alt="" class="img-responsive product-thumb" src="~/lotus/images/flower/@item.Resim">
+                    </a>
+                    <div class="media-body">
+                        <a href="/CiceklerUrun/UrunSatisDetay/@item.Id" class="product-title">@item.UrunAd</a>
+                        <p class="product-price">@item.Fiyat TL</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+

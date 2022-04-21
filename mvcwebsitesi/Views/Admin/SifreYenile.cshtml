@@ -1,0 +1,29 @@
+﻿@model mvcwebsitesi.Models.Admin
+
+@{
+    ViewBag.Title = "SifreYenile";
+    Layout = "~/Views/Shared/_LayoutAnaSayfa.cshtml";
+}
+
+<div class="container pb-5">
+    @using (Html.BeginForm("SifreYenile", "Admin", FormMethod.Post))
+    {
+        <h1>Şifre Kurtarma</h1>
+        <hr />
+        <div class="container">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email giriniz" />
+            </div>
+            <div class="form-group">
+                <input type="password" id="emailsifre" name="emailsifre" placeholder="Email sifrenizi giriniz" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sıfırla" class="btn btn-success" />
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink(" Geri Dön", "AdminLogin", "Admin", null, new { @class = " btn btn-danger btn-sm fa fa-reply-all" })
+    </div>
+</div>

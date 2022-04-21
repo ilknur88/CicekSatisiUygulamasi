@@ -1,0 +1,93 @@
+﻿@model mvcwebsitesi.Models.CiceklerUrun
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+<br /> <br />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container pb-5">
+
+    <h3>Silmek istediğinize emin misiniz?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Kategori.KategoriAlani)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kategori.KategoriAlani)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UrunAd)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UrunAd)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Resim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Resim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OnayliMi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OnayliMi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ÖncelikliMi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ÖncelikliMi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AnaSayfaMi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AnaSayfaMi)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-success btn-sm" />
+                @Html.ActionLink(" Geri Dön", "Index", "CiceklerUrun", null, new { @class = " btn btn-danger btn-sm fa fa-reply-all" })
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model mvcwebsitesi.Models.CiceklerUrun
+
+
+<div class="container pb-5">
+
+    <section id="shop" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12 product">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div>
+                                    <img alt="" class="img-responsive" src="~/lotus/images/flower/@Model.Resim" style="width:270px;height:420px">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="padding15">
+                                    <h2 class="product-title"><b>@Model.UrunAd</b></h2>
+                                    <p>
+                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                    </p>
+                                    <p class="product-price">@Model.Fiyat TL</p>
+                                </div>
+
+                                <div class="padding15">
+                                    <form method="post" class="form-inline">
+                                        <div class="form-group qty">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Adet</span>
+                                                <input type="number" size="4" class="form-control" value="1" min="1" step="1">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus fa-fw"></i> Sepete Ekle</button>
+                                    </form>
+                                </div>
+                                <p><b>Kategori:</b> <a href="#">@Model.Kategori.KategoriAlani</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 padding25">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#description">Açıklama</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="description" class="tab-pane fade in active">
+                                <p>@Model.Aciklama</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

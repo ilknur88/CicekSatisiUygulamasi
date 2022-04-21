@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Multipurpose Website Template</title>
+
+    <link rel="shortcut icon" href="/lotus/images/flower/favicon.png" />
+    
+    <link href="/lotus/style.css" rel="stylesheet" type="text/css">
+
+    <link href="/lotus/styles/lunar.css" rel="stylesheet" type="text/css" id="colorstyle">
+
+    <link href="/lotus/custom.css" rel="stylesheet" type="text/css">
+
+    <link href="/lotus/demo/demo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- WRAPPER START -->
+    <div id="wrapper">
+        <!-- HEADER START -->
+        <section id="header">
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" >
+                            <img src="/lotus/images/flower/lotus-logo.png" width="80" alt="Lotus - Multipurpose Website Template">
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Ana Sayfa", "AnaSayfa", "CiceklerUrun") </li>
+                            <li>@Html.ActionLink("Bilgilerini Gözden Geçirmek İster Misin?", "Index", "Müsteri") </li>
+
+                            <li><a href="shop-cart.html"><i class="fa fa-shopping-cart fa-fw"></i> Cart (2)</a></li>
+
+                            <li>@Html.ActionLink("Çıkış Yap", "Cikis", "Müsteri") </li>
+
+                        </ul>
+
+
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+        </section>
+        <!-- HEADER END -->
+        <!-- PAGE TITLE START -->
+        <section id="title" class="container-fluid wow fadeInDown">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h1>Lotos <small>Çiçekçilik</small></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PAGE TITLE END -->
+        <!-- CONTENT START -->
+        <section id="content">
+
+            @RenderBody()
+
+        </section>
+
+
+
+
+        <!-- CONTENT END -->
+        <!-- FOOTER START -->
+        <section id="footer" style="position: center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>
+                        <ul class="list-unstyled list-inline social-icons bottom ">
+                            <li><a href="#"  class="facebook"><i class="fa fa-facebook facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter twitter"></i></a></li>
+                            <li><a href="#" class="googleplus"><i class="fa fa-google-plus googleplus"></i></a></li>
+                            <li><a href="#" class="youtube"><i class="fa fa-youtube youtube"></i></a></li>
+                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin linkedin"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-offset-10">
+                        <h4>CONTACT US</h4>
+                        <p><i class="fa fa-map-pin fa-fw"></i> 379 5th Ave, New York, 10001, USA</p>
+                        <p><i class="fa fa-phone fa-fw"></i> +(112) 345 6879</p>
+                        <p><i class="fa fa-envelope fa-fw"></i> hello@example.com</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER END -->
+
+
+    </div>
+    <!-- WRAPPER END -->
+    <!-- back to top button -->
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
+
+    <!-- MAIN JS FILES REQUIRED ON ALL PAGES -->
+    <script src="/lotus/vendor/jquery/jquery.min.js"></script>
+
+    <script src="/lotus/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lotus/vendor/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="/lotus/vendor/wow/wow.min.js"></script>
+    <script src="/lotus/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/lotus/vendor/SmoothScroll/SmoothScroll.min.js"></script>
+
+    <script src="/lotus/vendor/waypoints/waypoints.min.js"></script>
+    <script src="/lotus/vendor/counterup/jquery.counterup.min.js"></script>
+
+
+    <!-- HERO SLIDER-->
+    <script src="/lotus/vendor/hero-slider/js/modernizr.js"></script>
+    <script src="/lotus/vendor/hero-slider/js/main.js"></script>
+
+    <!-- OWL CAROUSEL -->
+    <script src="/lotus/vendor/owl-carousel/owl.carousel.js"></script>
+
+    <!-- FILTERIZR -->
+    <script src="/lotus/vendor/jquery/jquery.filterizr.js"></script>
+
+    <!-- lotus JS REQUIRED ON ALL PAGES-->
+    <script src="lotus.js"></script>
+
+    <script>
+    (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-81122143-3', 'auto');
+        ga('send', 'pageview');</script>
+
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

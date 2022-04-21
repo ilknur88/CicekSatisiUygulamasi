@@ -1,0 +1,45 @@
+﻿@model mvcwebsitesi.Models.Admin
+
+@{
+    ViewBag.Title = "AdminLogin";
+    Layout = "~/Views/Shared/_LayoutAnaSayfa.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br /> <br />
+<div class="container pb-5">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.AdminId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.AdminId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AdminId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-3">
+                    @Html.PasswordFor(model => model.Sifre, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <br />
+                    <input type="submit" value="Giriş" class="btn btn-success btn-lg" />
+                    @Html.ActionLink("Şifreni Mi Unuttun?", "SifreYenile", "Admin", null, new { @class = " btn btn-danger btn-lg" })
+                    <br /> <br />
+                </div>
+            </div>
+        </div>
+    }
+
+    <p style="color:darkred">@ViewBag.msg</p>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

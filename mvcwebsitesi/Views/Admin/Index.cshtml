@@ -1,0 +1,47 @@
+﻿@model IEnumerable<mvcwebsitesi.Models.Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br /> <br /> <br />
+    <div class="container pb-5">
+        <p>
+            @Html.ActionLink(" Ekle", "Create", "Admin", new { @class = " btn btn-success btn-sm fa fa-plus-square" })
+
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AdSoyad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdSoyad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" Detay", "Details", new { id = item.AdminId }, new { @class = " btn btn-success btn-sm fa fa-search" })
+                        @Html.ActionLink(" Güncelle", "Edit", new { id = item.AdminId }, new { @class = " btn btn-success btn-sm fa fa-pencil-square-o" })
+                        @Html.ActionLink(" Sil", "Delete", new { id = item.AdminId }, new { @class = " btn btn-success btn-sm fa fa-trash" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <p>
+            @Html.ActionLink(" Geri Dön", "AdminGiris", "Admin", null, new { @class = " btn btn-danger btn-sm fa fa-reply-all" })
+        </p>
+    </div>

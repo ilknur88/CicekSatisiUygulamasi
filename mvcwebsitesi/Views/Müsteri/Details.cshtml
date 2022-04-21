@@ -1,0 +1,40 @@
+﻿@model mvcwebsitesi.Models.Müsteri
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container pb-5">
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AdSoyad)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdSoyad)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Sifre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sifre)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink(" Geri Dön", "Index", "Müsteri", null, new { @class = " btn btn-danger btn-sm fa fa-reply-all" })
+    </p>
+    <br /> <br /> <br />
+</div>
